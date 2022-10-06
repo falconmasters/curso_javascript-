@@ -1,0 +1,25 @@
+.header {
+	padding: 40px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		text-transform: uppercase;
+		font-size: 32px;
+		font-weight: 700;
+	}
+
+	&__menu {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__link {
+		color: #000;
+	}
+
+	&__link:hover {
+		text-decoration: underline;
+	}
+}

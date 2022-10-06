@@ -1,0 +1,120 @@
+@use 'variables';
+
+.galeria {
+	display: none;
+
+	&--active {
+		display: block;
+	}
+
+	&__overlay {
+		background: rgba(0, 0, 0, 0.95);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 100;
+		overflow: auto;
+	}
+
+	&__contenedor {
+		width: 90%;
+		max-width: 1050px;
+		margin: auto;
+		padding: 40px 0;
+		display: grid;
+		height: 100vh;
+		grid-template-rows: auto 1fr auto;
+		gap: 20px;
+		position: relative;
+	}
+
+	&__contenedor-titulo {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__titulo {
+		font-family: variables.$secondary-font-family;
+		font-size: 24px;
+		font-weight: normal;
+	}
+
+	&__btn {
+		background: none;
+		border: none;
+		color: #fff;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+
+		&--anterior {
+			position: absolute;
+			left: -5%;
+			top: calc(50% - 20px);
+		}
+
+		&--siguiente {
+			position: absolute;
+			right: -5%;
+			top: calc(50% - 20px);
+		}
+	}
+
+	&__icono-boton {
+		height: 100%;
+		width: 100%;
+	}
+
+	&__contenedor-imagen-activa {
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	&__descripcion-imagen-activa {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 10px;
+	}
+
+	&__carousel {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 10px;
+		align-items: center;
+	}
+
+	&__carousel-atras,
+	&__carousel-adelante {
+		display: flex;
+		align-items: center;
+		&--active {
+			display: flex;
+		}
+	}
+
+	&__carousel-slides {
+		width: 100%;
+		display: flex;
+		gap: 10px;
+		overflow: auto;
+		scroll-snap-type: x mandatory;
+	}
+
+	&__carousel-slide {
+		display: block;
+		scroll-snap-align: start;
+		border: 1px solid transparent;
+
+		&--active {
+			border: 1px solid #fff;
+		}
+	}
+	&__carousel-image {
+		max-height: 100px;
+		vertical-align: top;
+	}
+}

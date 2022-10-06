@@ -1,0 +1,46 @@
+@use 'variables';
+
+.btn {
+	display: inline-block;
+	padding: 10px 15px;
+	color: #fff;
+	font-family: variables.$fuente-primaria;
+	cursor: pointer;
+	border: none;
+	background: variables.$color-btn;
+	border-radius: 50px;
+	font-weight: 600;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 8px;
+
+	&__icono {
+		width: 16px;
+		height: 16px;
+	}
+
+	&:hover {
+		background: variables.$color-btn--hover;
+	}
+
+	&--100 {
+		width: 100%;
+	}
+
+	&--active {
+		background-color: variables.$color-btn--active;
+		&:hover {
+			background-color: variables.$color-btn--active;
+		}
+	}
+
+	&--rojo {
+		background-color: variables.$color-btn--active;
+		&:hover {
+			background-color: variables.$color-btn--active2;
+		}
+	}
+}

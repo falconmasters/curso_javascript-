@@ -1,0 +1,28 @@
+@use 'variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: variables.$fuente-primaria;
+	font-size: 16px;
+	background: variables.$color-fondo;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.contenedor {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}

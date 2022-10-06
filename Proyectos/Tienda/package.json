@@ -1,0 +1,17 @@
+{
+	"name": "tienda",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"sass": "sass --watch --style=compressed sass/index.scss public/bundle.css",
+		"build": "rollup --watch --config"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"rollup": "^2.75.7"
+	}
+}

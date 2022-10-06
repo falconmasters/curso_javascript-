@@ -1,0 +1,46 @@
+.footer {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	text-align: center;
+	padding: 40px 0px;
+
+	&__titulo {
+		margin-bottom: 10px;
+		font-size: 24px;
+	}
+
+	&__subtitulo {
+		margin-bottom: 40px;
+	}
+
+	&__redes {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	&__red {
+		width: 70px;
+		height: 70px;
+		border-radius: 70px;
+		color: #fff;
+		padding: 24px;
+
+		&--twitter {
+			background: #1da1f2;
+		}
+		&--linkedin {
+			background: #0077b5;
+		}
+		&--email {
+			background: #656565;
+		}
+	}
+
+	&__icono {
+		width: 100%;
+		height: 100%;
+	}
+}

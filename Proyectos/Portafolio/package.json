@@ -1,0 +1,17 @@
+{
+	"devDependencies": {
+		"rollup": "^2.79.0"
+	},
+	"name": "portafolio",
+	"version": "1.0.0",
+	"main": "rollup.config.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"sass": "sass --watch --style=compressed sass/index.scss public/bundle.css",
+		"build": "rollup --watch --config --sourcemap"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}

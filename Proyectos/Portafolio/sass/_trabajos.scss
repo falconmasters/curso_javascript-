@@ -1,0 +1,38 @@
+@use 'variables';
+
+.trabajos {
+	background: #0d0e26;
+
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	padding: 40px 65px;
+
+	&__header {
+		text-align: center;
+		color: #fff;
+		margin-bottom: 40px;
+	}
+
+	&__titulo {
+		margin-bottom: 10px;
+	}
+
+	&__trabajo {
+		opacity: 0;
+		transition: 0.5s ease all;
+		&--visible {
+			opacity: 1;
+		}
+	}
+
+	&__imagenes {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 5px;
+	}
+
+	&__imagen {
+		width: 100%;
+	}
+}

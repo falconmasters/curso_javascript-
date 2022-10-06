@@ -1,0 +1,74 @@
+@use 'variables';
+
+.linea-pasos {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	position: relative;
+	font-size: 14px;
+
+	&__paso {
+		// cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&:nth-child(1) {
+			align-items: flex-start;
+		}
+		&:nth-last-child(2) {
+			align-items: flex-end;
+		}
+	}
+
+	&__paso-check {
+		display: block;
+		background: variables.$color-primario-deshabilitado;
+		height: 30px;
+		width: 30px;
+		border-radius: 30px;
+		margin-bottom: 10px;
+		position: relative;
+		z-index: 2;
+
+		&--checked {
+			cursor: pointer;
+			background: variables.$color-primario;
+			.linea-pasos__icono-check {
+				display: block;
+			}
+		}
+
+		&--active {
+			background: variables.$color-primario;
+			&::after {
+				content: '';
+				display: block;
+				width: 14px;
+				height: 14px;
+				border-radius: 14px;
+				background: variables.$color-primario;
+				border: 4px solid variables.$color-fondo-formulario;
+				position: relative;
+				top: calc(50% - 11px);
+				left: calc(50% - 11px);
+			}
+		}
+	}
+
+	&__icono-check {
+		display: none;
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		color: #000;
+	}
+
+	&__progreso {
+		position: absolute;
+		top: 15px;
+		width: 100%;
+		height: 2px;
+		z-index: 1;
+		background: variables.$color-primario;
+	}
+}

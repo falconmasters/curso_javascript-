@@ -1,0 +1,157 @@
+@use 'variables';
+
+.hero {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	min-height: 500px;
+	display: grid;
+	grid-template-columns: 55% 45%;
+
+	&__info {
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 40px 65px;
+	}
+
+	&__header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__titulo {
+		font-size: 34px;
+		font-weight: 700;
+		display: inline-block;
+		position: relative;
+	}
+
+	&__subtitulo {
+		font-size: 18px;
+		font-weight: 700;
+		margin: 10px 0;
+		color: variables.$color-primario;
+	}
+
+	&__cursor {
+		display: none;
+		height: 34px;
+		width: 34px;
+		color: #8b8b8b;
+		position: absolute;
+		top: 4px;
+		// left: 90px;
+		// top: -40px;
+		right: -30px;
+		&--visible {
+			display: block;
+		}
+
+		&--active {
+			animation: cursor 0.8s linear 0s infinite alternate;
+		}
+	}
+
+	@keyframes cursor {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	&__cursor-icono {
+		height: 100%;
+		width: 100%;
+	}
+
+	&__resumen {
+		line-height: 24px;
+		font-size: 16px;
+		color: variables.$color-texto-secundario;
+		margin-bottom: 20px;
+	}
+
+	&__redes {
+		display: flex;
+		gap: 10px;
+	}
+
+	&__red {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px;
+		border-radius: 40px;
+		&--twitter {
+			background: #1da1f2;
+		}
+		&--linkedin {
+			background: #0077b5;
+		}
+		&--email {
+			background: #656565;
+		}
+	}
+
+	&__icono {
+		width: 100%;
+		height: 100%;
+		color: #fff;
+	}
+
+	&__contenedor-foto {
+		position: relative;
+	}
+
+	&__foto {
+		vertical-align: top;
+		width: 100%;
+	}
+
+	&__burbuja {
+		background: #000;
+		padding: 20px;
+		border-radius: 100px;
+		color: #fff;
+		position: absolute;
+		font-size: 14px;
+		font-weight: 600;
+		text-align: center;
+		user-select: none;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		bottom: -50px;
+		opacity: 0;
+
+		&--naranja {
+			transition: 1s ease-in-out all;
+			width: 100px;
+			background: variables.$color-naranja;
+			left: -50px;
+		}
+
+		&--azul {
+			transition: 1s ease-in-out all 0.2s;
+			width: 200px;
+			background: variables.$color-primario;
+			right: -50px;
+		}
+
+		&--active-1 {
+			transform: translateY(-100px);
+			opacity: 1;
+		}
+
+		&--active-2 {
+			transform: translateY(-170px);
+			opacity: 1;
+		}
+	}
+}

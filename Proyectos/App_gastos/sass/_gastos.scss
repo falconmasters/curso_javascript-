@@ -1,0 +1,105 @@
+@use 'variables';
+
+.gastos {
+	background: #fff;
+	border-radius: 20px 20px 0 0;
+	padding: 20px;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+
+	&__titulo {
+		font-weight: 700;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+
+	&__mensaje {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		color: variables.$color-fecha;
+		&--active {
+			display: flex;
+		}
+	}
+
+	&__lista {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		max-height: 60vh;
+		overflow: auto;
+		align-content: flex-start;
+	}
+}
+
+.gasto {
+	display: flex;
+	gap: 20px;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	scroll-snap-type: x mandatory;
+
+	&__info {
+		scroll-snap-align: start;
+		min-width: 100%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		border: 1px solid variables.$color-gris-claro;
+		border-radius: 10px;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	&__nombre {
+		margin-bottom: 5px;
+	}
+
+	&__cantidad {
+		font-size: 24px;
+		color: variables.$color-primario;
+	}
+
+	&__fecha {
+		font-size: 14px;
+		color: variables.$color-fecha;
+	}
+
+	&__acciones {
+		scroll-snap-align: start;
+		display: flex;
+		gap: 20px;
+	}
+
+	&__btn {
+		border: none;
+		cursor: pointer;
+		background: variables.$color-gris-claro;
+		width: 80px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		border-radius: 10px;
+		transition: 0.3s ease all;
+		&:hover {
+			background: variables.$color-gris-claro-hover;
+		}
+
+		&--rojo {
+			background: variables.$color-rojo;
+			color: #fff;
+			&:hover {
+				background: variables.$color-rojo-hover;
+			}
+		}
+	}
+}

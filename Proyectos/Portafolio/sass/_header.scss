@@ -1,0 +1,32 @@
+@use 'variables';
+
+.header {
+	width: 90%;
+	max-width: 1000px;
+	margin: 40px auto 0 auto;
+	background: #fff;
+	padding: 40px 65px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 20px 20px 0 0;
+
+	&__titulo {
+		font-size: 26px;
+		font-weight: 700;
+		color: #000;
+	}
+
+	&__menu {
+		display: flex;
+		gap: 50px;
+	}
+
+	&__link {
+		font-weight: 600;
+		color: #000;
+		&:hover {
+			color: variables.$color-primario;
+		}
+	}
+}

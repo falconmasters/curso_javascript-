@@ -1,0 +1,201 @@
+@use '../variables';
+
+.carrito {
+	display: none;
+
+	&.carrito--active {
+		display: block;
+	}
+
+	&__overlay {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(68, 68, 68, 0.7);
+		display: flex;
+		justify-content: center;
+	}
+
+	&__contenedor {
+		margin-top: 40px;
+		border-radius: 10px;
+		width: 90%;
+		max-width: 550px;
+	}
+
+	&__header {
+		padding: 20px;
+		background: variables.$color-blanco-secundario;
+		border-radius: 10px 10px 0 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__titulo {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	&__btn-cerrar {
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: variables.$color-gris-oscuro;
+		transition: 0.3s ease all;
+	}
+
+	&__btn-cerrar:hover {
+		color: variables.$color-btn;
+	}
+
+	&__body {
+		background: #fff;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__aviso-sin-productos {
+		text-align: center;
+		display: none;
+	}
+
+	// Si el carrito tiene la clase vacio.
+	&--vacio {
+		// Mostramos el aviso de que no hay productos.
+		.carrito__aviso-sin-productos {
+			display: block;
+		}
+	}
+
+	&__producto {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid variables.$color-blanco-secundario;
+	}
+
+	&__producto-info {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+
+	&__thumb {
+		width: 65px;
+		border-radius: 5px;
+		vertical-align: top;
+	}
+
+	&__producto-nombre {
+		font-weight: 600;
+		margin-bottom: 5px;
+	}
+
+	&__producto-cantidad {
+		font-weight: normal;
+	}
+
+	&__producto-propiedades {
+		display: flex;
+		gap: 10px;
+		color: variables.$color-muted;
+		font-size: 14px;
+		text-transform: capitalize;
+	}
+
+	&__producto-contenedor-precio {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		justify-content: center;
+	}
+
+	&__btn-eliminar-item {
+		background: none;
+		border: none;
+		cursor: pointer;
+		margin-bottom: 10px;
+		color: variables.$color-btn-claro-secundario;
+		transition: 0.3s ease all;
+	}
+
+	&__btn-eliminar-item:hover {
+		color: variables.$color-btn;
+	}
+
+	&__producto-precio {
+		font-size: 16px;
+	}
+
+	&__footer {
+		padding: 20px;
+		background: variables.$color-blanco-secundario;
+		border-radius: 0 0 10px 10px;
+	}
+
+	&__contenedor-total {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__contenedor-btn-regresar {
+		display: none;
+		justify-content: center;
+	}
+
+	// Si el carrito tiene la clase vacio.
+	&--vacio {
+		// Ocultamos el contenedor total.
+		.carrito__contenedor-total {
+			display: none;
+		}
+
+		// Mostramos el contenedor del btn de regresar.
+		.carrito__contenedor-btn-regresar {
+			display: flex;
+		}
+	}
+
+	&__btn-regresar {
+		background: variables.$color-btn;
+		padding: 15px 30px;
+		color: #fff;
+		font-size: 18px;
+		border: none;
+		cursor: pointer;
+		font-family: 'Rubik', sans-serif;
+		transition: 0.2s ease all;
+		border-radius: 5px;
+	}
+
+	&__label {
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+
+	&__total {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	&__btn-comprar {
+		background: variables.$color-btn;
+		padding: 15px 30px;
+		color: #fff;
+		font-size: 18px;
+		border: none;
+		cursor: pointer;
+		font-family: 'Rubik', sans-serif;
+		transition: 0.2s ease all;
+		border-radius: 5px;
+	}
+
+	&__btn-comprar:hover {
+		background: variables.$color-btn-hover;
+	}
+}

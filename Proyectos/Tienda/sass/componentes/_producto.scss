@@ -1,0 +1,154 @@
+@use './../variables';
+
+.producto {
+	background: #fff;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: variables.$shadow;
+	display: grid;
+	grid-template-columns: 7% 1fr 1fr;
+	gap: 20px;
+	margin-bottom: 40px;
+
+	&__thumbs {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__thumb-img {
+		width: 65px;
+		cursor: pointer;
+		border-radius: 5px;
+		width: 100%;
+		vertical-align: top;
+	}
+
+	&__contenedor-imagen {
+		width: 100%;
+	}
+
+	&__imagen {
+		width: 100%;
+		border-radius: 10px;
+	}
+
+	&__estrellas {
+		display: flex;
+		gap: 5px;
+		margin-bottom: 10px;
+	}
+
+	&__estrella {
+		width: 10px;
+		height: 10px;
+		color: #049aef;
+	}
+
+	&__nombre {
+		font-size: 32px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+
+	&__descripcion {
+		color: variables.$color-muted;
+		margin-bottom: 20px;
+	}
+
+	&__contenedor-propiedad {
+		margin-bottom: 20px;
+	}
+
+	&__propiedad {
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+
+	&__precio {
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	&__contenedor-radios {
+		display: flex;
+		gap: 10px;
+	}
+
+	&__radio-input {
+		display: none;
+		&:checked + p {
+			border: 2px solid variables.$color-btn;
+		}
+	}
+
+	&__radio-texto {
+		cursor: pointer;
+		padding: 10px;
+		background: variables.$color-blanco-secundario;
+		border-radius: 5px;
+		font-size: 14px;
+		border: 2px solid transparent;
+		position: relative;
+		&--color {
+			padding-left: 30px;
+			&::after {
+				content: '';
+				display: block;
+				width: 14px;
+				height: 14px;
+				border-radius: 14px;
+				position: absolute;
+				top: calc(50% - 7px);
+				left: 10px;
+				background: #000;
+			}
+		}
+
+		&--rojo::after {
+			background: #fd443d;
+		}
+		&--amarillo::after {
+			background: #d6d610;
+		}
+	}
+
+	&__btn-cantidad {
+		background: #f5f5f5;
+		padding: 10px 15px;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		font-weight: 700;
+		height: 40px;
+	}
+
+	&__cantidad {
+		height: 40px;
+		border: none;
+		text-align: center;
+		width: 50px;
+		font-size: 16px;
+		font-family: variables.$font-family;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__btn-carrito {
+		height: 50px;
+		background: variables.$color-btn;
+		font-size: 16px;
+		font-family: 'Rubik', sans-serif;
+		font-weight: 600;
+		border-radius: 5px;
+		color: #fff;
+		cursor: pointer;
+		border: none;
+		padding: 10px 30px;
+		transition: 0.3s ease all;
+		&:hover {
+			background: variables.$color-btn-hover;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@use '../variables';
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+
+	&__svg {
+		height: 10px;
+		width: 10px;
+		color: variables.$color-muted;
+	}
+
+	&__link {
+		color: variables.$color-muted;
+		font-size: 14px;
+	}
+
+	&__link:hover {
+		text-decoration: underline;
+	}
+
+	&__active {
+		font-size: 14px;
+		text-decoration: underline;
+		color: #000;
+	}
+}

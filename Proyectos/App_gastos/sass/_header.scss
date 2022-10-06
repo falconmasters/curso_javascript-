@@ -1,0 +1,13 @@
+.total-gastado {
+	padding: 20px 0;
+	text-align: center;
+	color: #fff;
+	&__leyenda {
+		margin-bottom: 5px;
+	}
+	&__cantidad {
+		width: 100%;
+		font-size: 24px;
+		font-weight: 700;
+	}
+}

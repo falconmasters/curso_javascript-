@@ -1,0 +1,95 @@
+@use 'variables';
+
+.formulario-gasto {
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+	background: #fff;
+	position: absolute;
+	z-index: 11;
+	border-radius: 25px 25px 0 0;
+	transition: 0.3s ease-in-out all;
+	transform: translateY(5%);
+
+	&--active {
+		transform: translateY(-100%);
+	}
+
+	&__titulo {
+		font-weight: 700;
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__label {
+		font-size: 14px;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	&__leyenda {
+		font-size: 12px;
+		color: variables.$color-fecha;
+		margin: 10px 0;
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		border: none;
+		font-size: 18px;
+		font-family: variables.$fuente-primaria;
+		height: 70px;
+		border-radius: 5px;
+		text-align: center;
+		padding: 0 20px;
+		background: #f8f8f8;
+		outline: none;
+		border: 2px solid transparent;
+
+		&:focus {
+			border: 2px solid variables.$color-gris-claro;
+		}
+
+		&--error {
+			border: 2px solid variables.$color-rojo;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 70px;
+		width: 100%;
+		cursor: pointer;
+		border: none;
+		background: variables.$color-primario;
+		color: #fff;
+		text-transform: uppercase;
+		font-family: variables.$fuente-primaria;
+		font-weight: 700;
+		font-size: 14px;
+		border-radius: 5px;
+		transition: 0.3s ease all;
+		outline: 2px solid transparent;
+
+		&:focus {
+			outline: 2px solid variables.$color-primario-hover;
+		}
+
+		&:hover {
+			background: variables.$color-primario-hover;
+		}
+	}
+}

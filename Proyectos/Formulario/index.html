@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formulario</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+		<script defer src="./public/bundle.js"></script>
+		<link rel="stylesheet" href="./public/bundle.css" />
+	</head>
+	<body>
+		<div class="contenedor">
+			<form action="" class="formulario" id="formulario">
+				<div class="formulario__header">
+					<h2 class="formulario__titulo">Transferencia</h2>
+					<div class="linea-pasos" id="linea-pasos">
+						<div class="linea-pasos__paso" data-paso="cantidad">
+							<span class="linea-pasos__paso-check linea-pasos__paso-check--active">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="linea-pasos__icono-check"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+									/>
+								</svg>
+							</span>
+							Cantidad
+						</div>
+						<div class="linea-pasos__paso" data-paso="datos">
+							<span class="linea-pasos__paso-check">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="linea-pasos__icono-check"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+									/>
+								</svg>
+							</span>
+							Datos
+						</div>
+						<div class="linea-pasos__paso" data-paso="metodo">
+							<span class="linea-pasos__paso-check">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="linea-pasos__icono-check"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+									/>
+								</svg>
+							</span>
+							Método
+						</div>
+						<div class="linea-pasos__paso" data-paso="confirmacion">
+							<span class="linea-pasos__paso-check">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="linea-pasos__icono-check"
+									viewBox="0 0 16 16"
+								>
+									<path
+										d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+									/>
+								</svg>
+							</span>
+							Confirmación
+						</div>
+						<div class="linea-pasos__progreso"></div>
+					</div>
+				</div>
+				<div class="formulario__body">
+					<div class="formulario__seccion" data-paso="cantidad">
+						<p class="formulario__subtitulo">Ingresa la cantidad a transferir</p>
+						<div class="formulario__grupo-input">
+							<label class="formulario__label" for="cantidad">Cantidad a transferir</label>
+							<input class="formulario__input" type="text" id="cantidad" placeholder="$100.00" />
+							<p class="formulario__leyenda">Por favor ingresa una cantidad correcta</p>
+						</div>
+					</div>
+					<div class="formulario__seccion" data-paso="datos">
+						<p class="formulario__subtitulo">Ingresa los datos del receptor</p>
+						<div class="formulario__grupo-inputs">
+							<div class="formulario__grupo-input">
+								<label class="formulario__label" for="nombre-receptor">Nombre del receptor</label>
+								<input
+									class="formulario__input"
+									type="text"
+									id="nombre-receptor"
+									placeholder="John Doe"
+								/>
+								<p class="formulario__leyenda">Por favor ingresa un nombre valido</p>
+							</div>
+							<div class="formulario__grupo-input">
+								<label class="formulario__label" for="correo-receptor"
+									>Correo electrónico del receptor</label
+								>
+								<input
+									class="formulario__input"
+									type="text"
+									id="correo-receptor"
+									placeholder="correo@correo.com"
+								/>
+								<p class="formulario__leyenda">Por favor ingresa un correo valido</p>
+							</div>
+						</div>
+					</div>
+					<div class="formulario__seccion" data-paso="metodo">
+						<p class="formulario__subtitulo">Selecciona el método</p>
+						<div class="formulario__grupo-checkbox">
+							<div class="formulario__radio">
+								<input
+									class="formulario__radio-input"
+									type="radio"
+									name="metodo"
+									id="tarjeta"
+									value="Tarjeta de credito"
+									checked
+								/>
+								<label for="tarjeta" class="formulario__radio-label"> Tarjeta de credito </label>
+							</div>
+							<div class="formulario__radio">
+								<input
+									class="formulario__radio-input"
+									type="radio"
+									name="metodo"
+									id="cheques"
+									value="Cuenta de cheques"
+								/>
+								<label for="cheques" class="formulario__radio-label">Cuenta de cheques</label>
+							</div>
+						</div>
+					</div>
+					<div class="formulario__seccion" data-paso="confirmacion">
+						<p class="formulario__subtitulo">Datos de la transferencia</p>
+						<div class="formulario__parrafos">
+							<p data-valor="cantidad"><b>Cantidad:</b> <span></span></p>
+							<p data-valor="nombre-receptor"><b>Receptor:</b> <span></span></p>
+							<p data-valor="correo-receptor"><b>Correo del receptor:</b> <span></span></p>
+							<p data-valor="metodo"><b>Método de pago:</b> <span></span></p>
+						</div>
+					</div>
+				</div>
+				<div class="formulario__footer">
+					<button class="formulario__btn" id="formulario__btn">
+						<span>Siguiente</span>
+						<div
+							class="formulario__btn-contenedor-icono formulario__btn-contenedor-icono--active"
+							data-icono="siguiente"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="formulario__btn-icono"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"
+								/>
+							</svg>
+						</div>
+						<div class="formulario__btn-contenedor-icono" data-icono="banco">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="formulario__btn-icono"
+								viewBox="0 0 16 16"
+							>
+								<path
+									d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"
+								/>
+							</svg>
+						</div>
+					</button>
+				</div>
+			</form>
+			<div class="alerta" id="alerta">
+				<h2 class="alerta__titulo">Transferencia completada</h2>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="alerta__icono"
+					viewBox="0 0 16 16"
+				>
+					<path
+						d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"
+					/>
+					<path
+						d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"
+					/>
+				</svg>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+@use 'variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: variables.$color-fondo;
+	font-family: variables.$primary-font-family;
+	font-size: 16px;
+	color: #fff;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1050px;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
