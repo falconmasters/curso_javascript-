@@ -643,7 +643,7 @@ const carousel = (direccion) => {
 
 	// El callback del observer se ejecutara cada que entren o salgan elementos del carousel.
 	const observer = new IntersectionObserver((entradas) => {
-		// Obtenemos el primer elemento que no sea visible y le ponemos un scrollIntoView.
+		// Obtenemos los slides que son visibles.
 		const slidesVisibles = entradas.filter((entrada) => {
 			if (entrada.isIntersecting === true) {
 				return entrada;
@@ -690,7 +690,7 @@ const carousel = (direccion) => {
 		});
 	}, opciones);
 
-	// Agregamos un observer a todos los slides
+	// Agregamos el observer a todos los slides
 	galeria$1.querySelectorAll('.galeria__carousel-slide').forEach((slide) => {
 		observer.observe(slide);
 	});
