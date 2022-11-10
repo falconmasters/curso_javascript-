@@ -25,6 +25,21 @@ const agregarCaja = () => {
 	/*
 		📌 2. Agregamos el elemento al DOM
 	*/
-	const contenedor = document.getElementById('contenedor2');
-	contenedor.appendChild(nuevaCaja);
+	const contenedor = document.getElementById('contenedor1');
+
+	// .appendChild() - Agrega un elemento al final
+	// contenedor.appendChild(nuevaCaja);
+
+	/* .insertAdjacentHTML() - Nos permite agregar un elemento 
+
+	Valores:
+		afterbegin - como primer elemento
+		beforebegin - antes del elemento padre
+		beforeend - como ultimo elemento
+		afterend -  despues del elemento padre
+	*/
+	// contenedor.insertAdjacentElement('beforeend', nuevaCaja);
+
+	// .replaceWith() - Nos permite remplazar el elemento por otro
+	document.querySelector('#contenedor1 .caja').replaceWith(nuevaCaja);
 };

@@ -31,7 +31,17 @@ contenedorPadre.addEventListener('click', (e) => {
 	// console.log('Ejecuta!');
 	// Ejecuta si hacemos click en el contenedor o en los elementos hijos.
 
-	if (e.target.classList.contains('caja')) {
+	// if (e.target.classList.contains('caja')) {
+	// 	// Ejecuta solo si el elemento que fue clickeado tiene la clase caja.
+	// 	console.log(`Hiciste click en la caja ${e.target.innerText}`);
+	// }
+
+	/* 
+		📌 .matches()
+		Con matches tambien podemos comprobar que el elemento tenga la clase caja.
+		Con matches tenemos mas flexibilidad.
+	*/
+	if (e.target.matches('div.caja')) {
 		// Ejecuta solo si el elemento que fue clickeado tiene la clase caja.
 		console.log(`Hiciste click en la caja ${e.target.innerText}`);
 	}

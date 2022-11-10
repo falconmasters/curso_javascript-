@@ -2,11 +2,14 @@
 	📌 El Document Object Model nos da metodos que podemos utilizar
 	para poder obtener elementos de la página web.
 	- getElementById
+	- children
 	- parentElement
 	- getElementsByTagName
 	- getElementsByClassName
 	- querySelectorAll
 	- querySelector
+	- closest
+	- matches
 */
 
 /*
@@ -15,6 +18,12 @@
 */
 const contenedor1 = document.getElementById('contenedor1');
 console.log(contenedor1);
+
+/* 
+	📌 children
+	Nos permite obtener los elementos hijo
+*/
+console.log(contenedor1.children);
 
 /*
 	📌 parentElement
@@ -61,6 +70,13 @@ console.log(cajas);
 cajas.forEach((caja) => {
 	console.log(caja.innerHTML);
 });
+
+/* 
+	📌 closest
+	Nos permite buscar de adentro hacia afuera en busca de un elemento
+*/
+const ultimaCaja = document.querySelector('.caja:last-child');
+console.log(ultimaCaja.closest('.contenedor-principal'));
 
 /* 
 	📌 Podemos encadenar todos los metodos para obtener elementos.
