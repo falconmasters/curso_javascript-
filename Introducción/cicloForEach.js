@@ -7,7 +7,7 @@ amigos.forEach((amigo, index) => console.log(`El amigo #${index} es: ${amigo}`))
 
 /*
 	📌 Ciclo for in
-	Nos permite recorrer las propiedades de un arreglo.
+	Nos permite recorrer las propiedades de un objeto.
 */
 const persona = {
 	nombre: 'Carlos',

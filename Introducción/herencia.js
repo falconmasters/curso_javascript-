@@ -36,7 +36,7 @@ const usuario1 = new Usuario('carlos', '123');
 console.log(usuario1.permisos);
 console.log(usuario1.obtenerPosts());
 
-// El usuario 2 es un admin
+// El usuario 2 es un moderador
 const usuario2 = new Moderador('arturo', '123', ['borrar', 'editar']);
 // Tambien puede acceder a los metodos y propiedades de la clase Usuario.
 console.log(usuario2.tipo);

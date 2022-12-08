@@ -31,7 +31,7 @@ for (let i = 1; i < nombres.length; i++) {
 const invitados = ['Carlos', 'Christian', 'Christoher', 'Jorge', 'Estefania', 'Erika', 'Manuel'];
 // Recorremos el arreglo de invitados
 console.log('Lista de personas aceptadas:');
-for (let i = 1; i < invitados.length; i++) {
+for (let i = 0; i < invitados.length; i++) {
 	// Detectamos si hay algun invitado que no queremos
 	if (invitados[i] === 'Jorge') {
 		continue;

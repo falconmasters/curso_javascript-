@@ -17,21 +17,20 @@ const agregarCaja = () => {
 	/*
 		📌 2. Agregamos texto y atributos
 	*/
-	// caja.innerHTML = '<b>Nuevo texto!</b>';
+	// nuevaCaja.innerHTML = '<b>Nuevo texto!</b>';
 	nuevaCaja.innerText = 'Nueva caja!';
 	nuevaCaja.setAttribute('id', 'nuevo-id');
 	nuevaCaja.setAttribute('class', 'caja activa');
 
 	/*
-		📌 2. Agregamos el elemento al DOM
+		📌 3. Agregamos el elemento al DOM
 	*/
 	const contenedor = document.getElementById('contenedor1');
 
 	// .appendChild() - Agrega un elemento al final
 	// contenedor.appendChild(nuevaCaja);
 
-	/* .insertAdjacentHTML() - Nos permite agregar un elemento 
-
+	/* .insertAdjacentElement() - Nos permite agregar un elemento 
 	Valores:
 		afterbegin - como primer elemento
 		beforebegin - antes del elemento padre

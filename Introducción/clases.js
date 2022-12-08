@@ -6,10 +6,10 @@
 
 /*
 	📌 Estructura de una clase:
-	- Definicion
+	- Definición
 	- Propiedades: La clase puede contener variables. Dentro de una clase se llaman propiedades.
 	- Constructor: Es un metodo especial para inicializar un objeto creado a partir de una clase.
-	- Metodos: La clase puede contener funciones. Dentro de una clase se llaman metodos.
+	- Métodos: La clase puede contener funciones. Dentro de una clase se llaman metodos.
 */
 // class NombreDeLaClase {
 // 	constructor() {

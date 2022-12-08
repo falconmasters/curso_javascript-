@@ -1,16 +1,16 @@
 /* 📌 Tipos de datos que podemos guardar en las variables:
-string - Cadena de Texto
-number - Numero
-boolean - Booleano (verdadero o falso)
-object - Objeto
-function - Funciones
+	string - Cadena de Texto
+	number - Numero
+	boolean - Booleano (verdadero o falso)
+	object - Objeto
+	function - Funciones
 
-null - Valor nulo
-undefined - Valor sin definir
+	null - Valor nulo
+	undefined - Valor sin definir
 */
 
 // 📌 Cadena de Texto
-// Pueden llevar comillas simples, comillas sencillas o backticks.
+// Pueden llevar comillas simples, comillas dobles  o backticks.
 // Regularmente se escriben con comillas simples o backticks.
 const nombre = 'Carlos Arturo';
 const parrafo = "Este es un parrafo que usa 'comillas' simples";

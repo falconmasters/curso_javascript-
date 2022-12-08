@@ -19,7 +19,6 @@ const persona = {
 		suscripcionCorreo: true,
 	},
 	coloresFavoritos: ['Negro', 'Rojo'],
-	['prueba hola']: 'hola',
 	saludo: function () {
 		alert('Hola!');
 	},

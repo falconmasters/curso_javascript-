@@ -1,5 +1,8 @@
 /*
-	El scope de javascript (ambito de las variables) determina si podemos acceder a una variable o no en ciertas partes de nuestro código.
+	El scope de javascript (ambito de las variables) determina si podemos
+	 acceder a una variable o no en ciertas partes de nuestro código.
+*/
+/*
 	- Global Scope o Variables Globales - Podemos acceder a las variables desde cualquier parte del código.
 	- Function Scope - Las variables creadas dentro de una funcion solo pueden ser accedidas dentro de la función.
 	- Block Scope (desde ES6) - Las variables creadas dentro de un bloque { } no pueden ser accedidas fuera del bloque.
@@ -56,7 +59,7 @@ console.log(numero); // variable not defined
 	- Solo podemos acceder a ellas dentro del bloque
 */
 
-var edad = 19;
+let edad = 19;
 if (edad >= 18) {
 	const accesoPermitido = true;
 
@@ -81,7 +84,8 @@ console.log(accesoPermitido); // No podemos acceder a la variable. Estamos fuera
 
 /*
 	Debemos procurar utilizar solamente const y let porque son las que nos proporcionan un scope de tipo bloque.
-	Este scope es mejor que el global porque nos permitira evitar bugs ya que las variables solo se podran acceder dentro del bloque y evitaremos que otras funciones las modifiquen.
+	Este scope es mejor que el global porque nos permitira evitar bugs ya
+	 que las variables solo se podran acceder dentro del bloque y evitaremos que otras funciones las modifiquen.
 */
 
 if (true) {
@@ -99,12 +103,3 @@ if (true) {
 	console.log(nombre); // Podemos acceder a la variable.
 }
 console.log(nombre); // No podemos acceder a la variable.
-
-/* 
-	Las variables definidas con let y const fuera de un bloque pasan a ser como las variables globales
-	Podemos acceder a ellas desde dentro de otros bloques.
-*/
-const nombre = 'Carlos';
-if (true) {
-	console.log(nombre); // Podemos acceder a la variable.
-}

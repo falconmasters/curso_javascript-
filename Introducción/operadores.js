@@ -54,9 +54,9 @@ Nos permiten comparar valores
 // const resultado = 7 > 1 ? 'El primer valor es mayor que el segundo' : 'El segundo valor es mayor que el primero';
 
 /* 📌 Operadores Lógicos 
-&& 	And
-||	OR
-! 	NOT
+	&& 	And
+	||	OR
+	! 	NOT
 */
 
 const nombre = 'Carlos';
@@ -65,7 +65,6 @@ const tieneEntrada = true;
 const tienePermiso = false;
 
 // Ejemplo #1
-// const permitirAcceso = edad > 18 && tieneEntrada; // true
 // const permitirAcceso = edad > 18 && tieneEntrada; // true
 // console.log('Acceso permitido al concierto: ' + permitirAcceso);
 

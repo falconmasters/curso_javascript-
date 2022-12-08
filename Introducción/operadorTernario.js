@@ -3,18 +3,18 @@
 */
 
 // Ejemplo de condicional sin operador ternario.
-// const edad = 15;
-// let accesoPermitido;
+// const boleto = 'vip';
+// let codigoDeAcceso;
 
-// if (edad > 18) {
-// 	accesoPermitido = true;
+// if (boleto === vip) {
+// 	codigoDeAcceso = 'VIP-123-456-789';
 // } else {
-// 	accesoPermitido = false;
+// 	codigoDeAcceso = 'Regular-123-456-789';
 // }
 
 // Ejemplo con operador ternario
-const edad = 15;
-const accesoPermitido = edad > 18 ? true : false;
+const boleto = 'vip';
+const codigoDeAcceso = boleto === 'VIP' ? 'VIP-123-456-789' : 'Regular-123-456-789';
 
 // Ejemplo 2 - No siempre es necsario guardar el valor en una variable
-edad >= 18 ? console.log('Mayor de edad') : console.log('Menor de edad');
+boleto === 'VIP' ? console.log('Tu boleto es VIP-123-456-789') : console.log('Tu boleto es Regular-123-456-789');

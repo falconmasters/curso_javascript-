@@ -1,30 +1,12 @@
-/* Switch es un bloque similar a elseif, nos permite ejecutar codigo cuando un valor sea igual a otro  */
-// switch (valorAComprobar) {
-// 	case 'valor1':
-// 		// Ejecutamos codigo 1
-// 		break;
-// 	case 'valor2':
-// 		// Ejecutamos código 2
-// 		break;
-// 	default:
-// 	// Ejecuta código por defecto
-// }
+/* 📌 
+	Switch es un bloque de codigo similar a elseif
+	que nos permite ejecutar código en base a una condición, en este caso cuando un valor sea igual a otro.
+*/
 
 const usuario = {
 	edad: 27,
 	pais: 'mexico',
 };
-
-// Condicional elseif
-// if (usuario.pais === 'mexico') {
-// 	console.log('El usuario es mexicano');
-// } else if (usuario.pais === 'españa') {
-// 	console.log('El usuario es español');
-// } else if (usuario.pais === 'argentina') {
-// 	console.log('El usuario es argentino');
-// } else {
-// 	console.log('El usuario es de otro pais');
-// }
 
 // Nota: no olvidarnos de la palabra break.
 
@@ -42,9 +24,20 @@ switch (usuario.pais) {
 		console.log('El usuario es de otro pais');
 }
 
+// Condicional elseif
+// if (usuario.pais === 'mexico') {
+// 	console.log('El usuario es mexicano');
+// } else if (usuario.pais === 'españa') {
+// 	console.log('El usuario es español');
+// } else if (usuario.pais === 'argentina') {
+// 	console.log('El usuario es argentino');
+// } else {
+// 	console.log('El usuario es de otro pais');
+// }
+
 /*
 	Cuando usar else if y cuando switch.
-	elseif nos permite tener condicionales mas complejos:
+	elseif nos permite tener condiciones mas complejas:
 		} else if (usuario.pais === 'españa' && usuario.edad >= 18) {
 
 	switch nos permite ejecutar codigo si una variable contiene X valor:

@@ -55,7 +55,7 @@ console.log(contenedores);
 	Nos devuelve el primer elemento que coincida con un selector estilo CSS.
 	Nota: Devuelve un nodelist.
 */
-const primeraCaja = document.querySelector('.contenedor-principal .caja');
+const primeraCaja = document.querySelector('#contenedor1 .caja');
 console.log(primeraCaja);
 
 /*
@@ -80,6 +80,8 @@ console.log(ultimaCaja.closest('.contenedor-principal'));
 
 /* 
 	📌 Podemos encadenar todos los metodos para obtener elementos.
+*/
+/* 
 	Muchas veces con querySelector resolvemos casi cualquier caso.
 	Pero aun asi tendremos situaciones donde tendremos que encadenar selectores.
 */

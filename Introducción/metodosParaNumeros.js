@@ -22,10 +22,9 @@
 /*
 	📌 .parseInt()
 	Intenta transformar un valor a un entero.
-
-	Muy útil para transformar de una cadena de texto a numero.
-	Por ejemplo al trabajar con formularios.
 */
+// Muy útil para transformar de una cadena de texto a numero.
+// Por ejemplo al trabajar con formularios.
 
 // Ejemplo donde en vez de sumar los numeros, los concatena por ser cadenas de texto
 // const numero1 = prompt('Escribe un numero');

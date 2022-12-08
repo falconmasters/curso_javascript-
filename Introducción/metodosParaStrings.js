@@ -9,7 +9,7 @@
 // console.log(texto.length);
 
 /*
-	📌 .indexOf() .lastIndexOf() - Devuelve el index del primer/ultimo caracter especificado.
+	📌 .indexOf() .lastIndexOf() - Devuelve el index del primer/último caracter especificado.
 */
 // const texto = 'Hola yo soy Carlos!';
 // console.log(texto.indexOf('o')); // 1

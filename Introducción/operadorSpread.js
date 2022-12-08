@@ -8,7 +8,7 @@ console.log(comidaFavorita);
 
 // Tambien funciona con objetos
 const datosLogin = {
-	nombre: 'Arturo', // Podemos sobreescribir valores
+	nombre: 'Arturo',
 	correo: 'correo@correo.com',
 	password: '123',
 };

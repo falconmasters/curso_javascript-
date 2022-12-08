@@ -1,5 +1,8 @@
 /* 
 	📌 Named Imports
+*/
+/* 
+	📌 Named Imports
 	Podemos importar variables y funciones que han sido exportadas mediante la palabra "export".
 	Podemos importarlas con el mismo nombre o podemos usar un alias usando la palabra "as".
 	Normalmente todos los import se establecen al inicio del documento.
@@ -10,6 +13,8 @@
 
 /* 
 	📌 Namespace Imports
+*/
+/* 
 	Podemos importar todas las variables y funciones que fueron exportadas 
 	con un named export dentro de un objeto.
 */
@@ -19,6 +24,8 @@
 
 /* 
 	📌 Default Imports
+*/
+/* 
 	Los default imports no utilizan llaves y podemos ponerles el nombre que queramos.
 */
 import obtenerUsuario from './defaultExport';

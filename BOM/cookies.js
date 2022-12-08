@@ -10,8 +10,8 @@
 	Las cookies se escriben como las variables:
 	identificador=valor
 
-	Cuando un navegador web va a mandar hcer la peticion de obtener una pagina al servidor,
-	las cookies que pertenecen a ese dominio son enviadas en la petición.
+	Otro uso de las cookies es cuando un navegador web va a mandar hacer un peticion a un servidor,
+	las cookies que pertenecen a esa pagina son enviadas en la petición.
 	De esta forma la información se guarda en la computadora del usuario pero el servidor puede acceder a ella.
 
 	Con Javascript podemos, crear, editar y borrar cookies.
@@ -26,7 +26,7 @@ const crearCookie = () => {
 	document.cookie = 'nombre=Carlos';
 
 	// Con expiración:
-	// document.cookie = 'nombre=Carlos; expires=1 Dec 2022 01:00:00 UTC';
+	// document.cookie = 'nombre=Carlos; expires=1 Jan 2023 01:00:00 UTC';
 };
 
 const iniciarSesion = () => {

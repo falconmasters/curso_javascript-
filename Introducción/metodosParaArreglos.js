@@ -84,7 +84,7 @@ console.log(dias);
 	📌 .splice()
 	Nos permite insertar elementos a un arreglo donde le especifiquemos.
 	- 1er parametro - Posición donde queremos comenzar a insertar los elementos.
-	- 2do parametro - Si queremos eliminar elementos del arreglo desde la posición indicada.
+	- 2do parametro - Cuantos elementos eliminar desde la posición indicada.
 	- Resto de parametros - Los elementos a insertar.
 */
 const amigos = ['Alejandro', 'Cesar', 'Manuel'];

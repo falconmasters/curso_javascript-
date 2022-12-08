@@ -1,19 +1,19 @@
 /*
-	📌 Que son las variables:
-	- Espacios en memoria donde podemos guardar informacion, normalmente son valores pequeños que nuestro sitio web o aplicacion utilizaran.
-*/
-
-/* 📌 Reglas de las variables:
-- Todas las variables deben tener nombres unicos.
-- Deben empezar por al menos una letra.
-- Tambien pueden empezar por el simbolo $ y _ pero es muy poco comun.
-- No se pueden usar palabras reservadas como nombre. (ejemplo: for)
+	📌 Qué son las variables:
+	- Espacios en memoria donde podemos guardar informacion, normalmente son valores pequeños que nuestro sitio web o aplicacion utilizarán.
 */
 
 // 📌 Como declarar variables
 // var edad 	Declaramos la variable edad.
 // = 27 		Le asignamos un tipo de valor.
 var edad = 27;
+
+/* 📌 Reglas de las variables:
+	- Todas las variables deben tener nombres únicos.
+	- Deben empezar por al menos una letra.
+	- También pueden empezar por el simbolo $ y _ pero es muy poco común.
+	- No se pueden usar palabras reservadas como nombre. (ejemplo: for)
+*/
 
 /* 📌 Tipos de datos que podemos guardar en las variables:
     string - Cadena de Texto

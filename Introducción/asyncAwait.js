@@ -33,9 +33,9 @@ const fetchPosts = () => {
 // 	});
 
 // Obtentiendo los posts (con async y catch)
-const obtenerPosts = async () => {
+const mostrarPosts = async () => {
 	// Sin TRY / CATCH
-	// const posts = await obtenerPosts();
+	// const posts = await fetchPosts();
 	// console.log(posts);
 
 	// CON TRY / CATCH

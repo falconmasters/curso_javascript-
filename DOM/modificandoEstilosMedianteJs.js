@@ -6,6 +6,8 @@
 
 /*
 	📌 Modificar estilos CSS mediante "inline styles".
+*/
+/*
 	Los estilos inline se aplican arriba de los estilos que podamos tener en archivos CSS.
 	Estos estilos se agregan en el atributo style del elemento.
 */

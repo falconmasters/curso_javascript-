@@ -1,6 +1,8 @@
 /* 📌 Las condicionales son un tipo de bloque que nos permite ejecutar código dependiendo de si se cumple una condición o no 
-
 	Normalmente se utilizan operadores de comparación.
+*/
+
+/*
 	📌 Operadores de Comparación:
 	==		Igual que
 	===		Igual en valor y typo de valor
@@ -21,7 +23,7 @@
 // 📌 Estructura de una condicional
 /* Condición */
 if (true) {
-	// Codigo a ejecutar
+	// Código a ejecutar
 }
 
 // 📌 Ejemplo #1:
