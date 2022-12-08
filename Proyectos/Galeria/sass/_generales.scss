@@ -23,3 +23,8 @@ a {
 	text-decoration: none;
 	color: #fff;
 }
+
+a:focus,
+button:focus {
+	outline: none;
+}
