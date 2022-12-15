@@ -490,30 +490,6 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
 	galeria$5.querySelector('.galeria__titulo').innerText = nombre;
 	galeria$5.querySelector('.galeria__imagen').src = ruta;
 	galeria$5.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
-
-	// Marcamos la imagen del carousel como activa.
-	const categoriaActual = galeria$5.dataset.categoria;
-	const fotos = data.fotos[categoriaActual];
-
-	// Eliminamos la clase active de cualquier slide.
-	galeria$5.querySelectorAll('.galeria__carousel-slide--active').forEach((elemento) => {
-		elemento.classList.remove('galeria__carousel-slide--active');
-	});
-
-	let indexImagenActual;
-	// Recorremos las imagenes en busca de una que tenga el id de la imagen actual y obtenemos su index.
-	fotos.forEach((foto, index) => {
-		if (foto.id === id) {
-			indexImagenActual = index;
-		}
-	});
-
-	// Ponemos la clase active en el elemento que fue clickeado.
-	if (galeria$5.querySelectorAll('.galeria__carousel-slide').length > 0) {
-		galeria$5
-			.querySelectorAll('.galeria__carousel-slide')
-			[indexImagenActual].classList.add('galeria__carousel-slide--active');
-	}
 };
 
 const cargarAnteriorSiguiente = (direccion) => {
@@ -559,10 +535,9 @@ contenedorCategorias.addEventListener('click', (e) => {
 	e.preventDefault();
 
 	// Comprobamos que lo que se le hace click contenga el data-categoria.
-	categoriaActiva = e.target.closest('a').dataset.categoria;
-	galeria$4.dataset.categoria = categoriaActiva;
-
-	if (categoriaActiva) {
+	if (e.target.closest('a')) {
+		categoriaActiva = e.target.closest('a').dataset.categoria;
+		galeria$4.dataset.categoria = categoriaActiva;
 		// Obtenemos las fotos que corresponden a la categoria
 		const fotos = data.fotos[categoriaActiva];
 		const carousel = galeria$4.querySelector('.galeria__carousel-slides');
@@ -619,6 +594,10 @@ const slideClick = (e) => {
 
 	// Cargamos toda la informacion de la nueva imagen
 	cargarImagen(id, nombre, ruta, descripcion);
+
+	// Eliminamos la clase active de cualquier slide.
+	galeria$3.querySelector('.galeria__carousel-slide--active').classList.remove('galeria__carousel-slide--active');
+	e.target.closest('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 };
 
 const galeria$2 = document.getElementById('galeria');

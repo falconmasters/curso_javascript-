@@ -14,10 +14,9 @@ contenedorCategorias.addEventListener('click', (e) => {
 	e.preventDefault();
 
 	// Comprobamos que lo que se le hace click contenga el data-categoria.
-	categoriaActiva = e.target.closest('a').dataset.categoria;
-	galeria.dataset.categoria = categoriaActiva;
-
-	if (categoriaActiva) {
+	if (e.target.closest('a')) {
+		categoriaActiva = e.target.closest('a').dataset.categoria;
+		galeria.dataset.categoria = categoriaActiva;
 		// Obtenemos las fotos que corresponden a la categoria
 		const fotos = dataFotos.fotos[categoriaActiva];
 		const carousel = galeria.querySelector('.galeria__carousel-slides');
