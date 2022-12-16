@@ -22,7 +22,7 @@ galeria.addEventListener('click', (e) => {
 		cerrarGaleria();
 	}
 
-	// - - - SIGUIENTE IMAGE
+	// - - - SIGUIENTE IMAGEN
 	if (boton?.dataset?.accion === 'siguiente-imagen') {
 		cargarAnteriorSiguiente('siguiente');
 	}

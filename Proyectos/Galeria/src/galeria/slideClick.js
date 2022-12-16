@@ -24,10 +24,6 @@ const slideClick = (e) => {
 
 	// Cargamos toda la informacion de la nueva imagen
 	cargarImagen(id, nombre, ruta, descripcion);
-
-	// Eliminamos la clase active de cualquier slide.
-	galeria.querySelector('.galeria__carousel-slide--active').classList.remove('galeria__carousel-slide--active');
-	e.target.closest('.galeria__carousel-slide').classList.add('galeria__carousel-slide--active');
 };
 
 export default slideClick;

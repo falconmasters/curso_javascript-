@@ -13,6 +13,30 @@ const cargarImagen = (id, nombre, ruta, descripcion) => {
 	galeria.querySelector('.galeria__titulo').innerText = nombre;
 	galeria.querySelector('.galeria__imagen').src = ruta;
 	galeria.querySelector('.galeria__descripcion-imagen-activa').innerText = descripcion;
+
+	// Eliminamos la clase active de cualquier slide.
+	galeria.querySelectorAll('.galeria__carousel-slide--active').forEach((elemento) => {
+		elemento.classList.remove('galeria__carousel-slide--active');
+	});
+
+	// Marcamos la imagen del carousel como activa.
+	const categoriaActual = galeria.dataset.categoria;
+	const fotos = data.fotos[categoriaActual];
+
+	let indexImagenActual;
+	// Recorremos las imagenes en busca de una que tenga el id de la imagen actual y obtenemos su index.
+	fotos.forEach((foto, index) => {
+		if (foto.id === id) {
+			indexImagenActual = index;
+		}
+	});
+
+	// Ponemos la clase active en el elemento que fue clickeado.
+	if (galeria.querySelectorAll('.galeria__carousel-slide').length > 0) {
+		galeria
+			.querySelectorAll('.galeria__carousel-slide')
+			[indexImagenActual].classList.add('galeria__carousel-slide--active');
+	}
 };
 
 const cargarAnteriorSiguiente = (direccion) => {
