@@ -8,14 +8,15 @@
 
 /*
 	📌 Mediante el objeto forms
+*/
+/*
 	El objeto forms contiene los formularios del documento.
 	Podemos acceder a cada uno mediante su id
 	Tambien podemos acceder a los inputs mediante su id o name
-*/
-// console.log(document.forms['formulario-donacion']['correo']);
+	console.log(document.forms['formulario-donacion']['correo']);
 
 /*
-	📌 Mediante métodos del DOMediante 
+	📌 Mediante métodos del DOM 
 */
 const correo = document.querySelector('#formulario-donacion [name="correo"]');
 
@@ -26,8 +27,8 @@ const correo = document.querySelector('#formulario-donacion [name="correo"]');
 const botonEnviar = document.getElementById('btnEnviar').addEventListener('click', (e) => {
 	// Prevenimos el comportamiento por defecto del boton.
 	// Por defecto los botones dentro de una etiqueta <form> intentaran enviar los datos
-	// mediante una peticion POST a la propia página y como parametros en la barra de direcciones.
-	e.preventDefault();
+	// mediante una petición POST a la propia página y como parametros en la barra de direcciones.
+	// e.preventDefault();
 
 	// Obtener el valor de un input
 	console.log(correo.value);
