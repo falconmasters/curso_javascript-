@@ -29,14 +29,15 @@ const renderCarrito = () => {
 		// Eliminamos la clase de carrito vacio
 		ventanaCarrito.classList.remove('carrito--vacio');
 
-		// Iteramos sobre cada producto del carrito
+		// Iteramos sobre cada producto del carrito y lo mostramos
 		carrito.forEach((productoCarrito) => {
 			// Iteramos sobre la lista de productos.
-			data.productos.forEach((productoLista) => {
+			data.productos.forEach((productoBaseDatos) => {
+				// Obtenemos el precio del archivo de producto.js
 				// Cuando el id del item del carrito sea el mismo que alguno de la lista.
-				if (productoCarrito.id === productoLista.id) {
+				if (productoCarrito.id === productoBaseDatos.id) {
 					// Tomamos el precio y creamos una nueva propiedad en el objeto del item.
-					productoCarrito.precio = productoLista.precio;
+					productoCarrito.precio = productoBaseDatos.precio;
 
 					total += productoCarrito.precio * productoCarrito.cantidad;
 				}
@@ -98,7 +99,7 @@ const renderCarrito = () => {
 	ventanaCarrito.querySelector('.carrito__total').innerText = formatearMoneda.format(total);
 };
 
-// Agregamos la funcionalidad de abrir carrito
+// Abrir carrito
 botonesAbrirCarrito.forEach((boton) => {
 	boton.addEventListener('click', (e) => {
 		renderCarrito();
