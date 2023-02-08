@@ -1,2 +1,0 @@
-import './lineaPasos';
-import './formulario';
