@@ -33,17 +33,20 @@ linea.addEventListener('click', (e) => {
 		// Hacemos scroll al paso al que demos click.
 		const id = pasoANavegar.dataset.paso;
 
-		// Cambiamos el texto del boton.
+		// Nos aseguramos de que el texto del boton sea siguiente.
 		const btnFormulario = document.querySelector('.formulario__btn');
 		btnFormulario.querySelector('span').innerText = 'Siguiente';
-		// Ocultamos el icono de banco.
+
+		// Nos aseguramos de ocultar el icono de banco.
 		btnFormulario
 			.querySelector('[data-icono="banco"]')
 			.classList.remove('formulario__btn-contenedor-icono--active');
-		// Mostramos el icono del siguiente.
+
+		// Nos aseguramos de mostrar el icono del siguiente.
 		btnFormulario
 			.querySelector('[data-icono="siguiente"]')
 			.classList.add('formulario__btn-contenedor-icono--active');
+
 		// Nos aseguramos de que no tenga la clase de disabled.
 		btnFormulario.classList.remove('formulario__btn--disabled');
 

@@ -28,13 +28,11 @@ btnFormulario.addEventListener('click', (e) => {
 		.dataset.paso;
 
 	if (pasoActual === 'cantidad') {
-		// btnFormulario.querySelector('span').innerText = 'Siguiente';
 		if (validarCantidad()) {
 			marcarPaso('cantidad');
 			siguientePaso();
 		}
 	} else if (pasoActual === 'datos') {
-		// btnFormulario.querySelector('span').innerText = 'Siguiente';
 		if (validarNombre() && validarCorreo()) {
 			marcarPaso('datos');
 			siguientePaso();
@@ -42,6 +40,7 @@ btnFormulario.addEventListener('click', (e) => {
 	} else if (pasoActual === 'metodo') {
 		marcarPaso('metodo');
 
+		// Paso final, confirmación
 		const opciones = { style: 'currency', currency: 'MXN' };
 		const formatoMoneda = new Intl.NumberFormat('es-MX', opciones);
 
@@ -55,12 +54,15 @@ btnFormulario.addEventListener('click', (e) => {
 
 		// Cambiamos el texto del btn a 'Transferir'
 		btnFormulario.querySelector('span').innerText = 'Transferir';
+
 		// Agregamos la clase que deshabilita el bootn.
 		btnFormulario.classList.add('formulario__btn--disabled');
+
 		// Ocultamos el icono de siguiente.
 		btnFormulario
 			.querySelector('[data-icono="siguiente"]')
 			.classList.remove('formulario__btn-contenedor-icono--active');
+
 		// Mostramos el icono del banco.
 		btnFormulario.querySelector('[data-icono="banco"]').classList.add('formulario__btn-contenedor-icono--active');
 		siguientePaso();
