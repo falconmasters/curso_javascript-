@@ -6,6 +6,9 @@ import validarCorreo from './validaciones/validarCorreo';
 
 const formulario = document.getElementById('formulario');
 
+// Reiniciando scroll al cargar el formulario.
+formulario.querySelector('.formulario__body').scrollLeft = 0;
+
 // Eventlistener para comprobar los campos de formulario cuando el usuario corrige.
 formulario.addEventListener('keyup', (e) => {
 	if (e.target.tagName === 'INPUT') {
@@ -55,7 +58,7 @@ btnFormulario.addEventListener('click', (e) => {
 		// Cambiamos el texto del btn a 'Transferir'
 		btnFormulario.querySelector('span').innerText = 'Transferir';
 
-		// Agregamos la clase que deshabilita el bootn.
+		// Agregamos la clase que deshabilita el boton.
 		btnFormulario.classList.add('formulario__btn--disabled');
 
 		// Ocultamos el icono de siguiente.
@@ -65,6 +68,7 @@ btnFormulario.addEventListener('click', (e) => {
 
 		// Mostramos el icono del banco.
 		btnFormulario.querySelector('[data-icono="banco"]').classList.add('formulario__btn-contenedor-icono--active');
+
 		siguientePaso();
 
 		// Eliminamos la clase de disabled despues de 4 segundos.
@@ -78,7 +82,7 @@ btnFormulario.addEventListener('click', (e) => {
 
 		// Cambiamos el texto del btn a 'Transferir'
 		btnFormulario.querySelector('span').innerText = 'Transfiriendo';
-		// Agregamos la clase que deshabilita el bootn.
+		// Agregamos la clase que deshabilita el boton.
 		btnFormulario.classList.add('formulario__btn--disabled');
 
 		setTimeout(() => {

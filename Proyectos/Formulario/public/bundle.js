@@ -55,6 +55,9 @@ const validarCorreo = () => {
 const linea = document.getElementById('linea-pasos');
 
 linea.addEventListener('click', (e) => {
+	// Validamos que el click sea en un paso
+	if (!e.target.closest('.linea-pasos__paso')) return false;
+
 	// Validamos el campo actual antes de saltar a otro.
 	// Obtenemos el paso actual.
 	const pasoActual = document.querySelector('.linea-pasos__paso-check--active').closest('.linea-pasos__paso')
@@ -64,7 +67,7 @@ linea.addEventListener('click', (e) => {
 	if (pasoActual === 'cantidad') {
 		if (!validarCantidad()) return false;
 	} else if (pasoActual === 'datos') {
-		if (!validarNombre() && !validarCorreo()) return false;
+		if (!validarNombre() || !validarCorreo()) return false;
 	}
 
 	// Obtenemos el paso al que queremos navegar.
@@ -80,20 +83,23 @@ linea.addEventListener('click', (e) => {
 			pasoActual.classList.remove('linea-pasos__paso-check--active');
 		}
 
-		// Hacemos scroll al paso al que demos click.
+		// Obtenemos el id del paso a navegar.
 		const id = pasoANavegar.dataset.paso;
 
-		// Cambiamos el texto del boton.
+		// Nos aseguramos de que el texto del boton sea siguiente.
 		const btnFormulario = document.querySelector('.formulario__btn');
 		btnFormulario.querySelector('span').innerText = 'Siguiente';
-		// Ocultamos el icono de banco.
+
+		// Nos aseguramos de ocultar el icono de banco.
 		btnFormulario
 			.querySelector('[data-icono="banco"]')
 			.classList.remove('formulario__btn-contenedor-icono--active');
-		// Mostramos el icono del siguiente.
+
+		// Nos aseguramos de mostrar el icono del siguiente.
 		btnFormulario
 			.querySelector('[data-icono="siguiente"]')
 			.classList.add('formulario__btn-contenedor-icono--active');
+
 		// Nos aseguramos de que no tenga la clase de disabled.
 		btnFormulario.classList.remove('formulario__btn--disabled');
 
@@ -146,6 +152,9 @@ const siguientePaso = () => {
 
 const formulario$1 = document.getElementById('formulario');
 
+// Reiniciando scroll al cargar el formulario.
+formulario$1.querySelector('.formulario__body').scrollLeft = 0;
+
 // Eventlistener para comprobar los campos de formulario cuando el usuario corrige.
 formulario$1.addEventListener('keyup', (e) => {
 	if (e.target.tagName === 'INPUT') {
@@ -168,13 +177,11 @@ btnFormulario.addEventListener('click', (e) => {
 		.dataset.paso;
 
 	if (pasoActual === 'cantidad') {
-		// btnFormulario.querySelector('span').innerText = 'Siguiente';
 		if (validarCantidad()) {
 			marcarPaso('cantidad');
 			siguientePaso();
 		}
 	} else if (pasoActual === 'datos') {
-		// btnFormulario.querySelector('span').innerText = 'Siguiente';
 		if (validarNombre() && validarCorreo()) {
 			marcarPaso('datos');
 			siguientePaso();
@@ -182,6 +189,7 @@ btnFormulario.addEventListener('click', (e) => {
 	} else if (pasoActual === 'metodo') {
 		marcarPaso('metodo');
 
+		// Paso final, confirmación
 		const opciones = { style: 'currency', currency: 'MXN' };
 		const formatoMoneda = new Intl.NumberFormat('es-MX', opciones);
 
@@ -195,14 +203,18 @@ btnFormulario.addEventListener('click', (e) => {
 
 		// Cambiamos el texto del btn a 'Transferir'
 		btnFormulario.querySelector('span').innerText = 'Transferir';
-		// Agregamos la clase que deshabilita el bootn.
+
+		// Agregamos la clase que deshabilita el boton.
 		btnFormulario.classList.add('formulario__btn--disabled');
+
 		// Ocultamos el icono de siguiente.
 		btnFormulario
 			.querySelector('[data-icono="siguiente"]')
 			.classList.remove('formulario__btn-contenedor-icono--active');
+
 		// Mostramos el icono del banco.
 		btnFormulario.querySelector('[data-icono="banco"]').classList.add('formulario__btn-contenedor-icono--active');
+
 		siguientePaso();
 
 		// Eliminamos la clase de disabled despues de 4 segundos.
@@ -216,7 +228,7 @@ btnFormulario.addEventListener('click', (e) => {
 
 		// Cambiamos el texto del btn a 'Transferir'
 		btnFormulario.querySelector('span').innerText = 'Transfiriendo';
-		// Agregamos la clase que deshabilita el bootn.
+		// Agregamos la clase que deshabilita el boton.
 		btnFormulario.classList.add('formulario__btn--disabled');
 
 		setTimeout(() => {
