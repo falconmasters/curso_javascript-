@@ -5,7 +5,8 @@
 */
 
 document.getElementById('boton1').addEventListener('click', () => {
-	window.localStorage.setItem('nombre', 'Carlos');
+	const nombre = prompt('Escribe tu nombre:');
+	window.localStorage.setItem('nombre', nombre);
 });
 
 document.getElementById('boton2').addEventListener('click', () => {

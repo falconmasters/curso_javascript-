@@ -1,16 +1,18 @@
 /*
 	📌 JSON
 	Javascript Object Notation
+*/
 
+/*
 	- Es un formato que se utiliza para mandar información de un sitio a otro.
 	- Por ejemplo cuando mandamos obtener informacion de un servidor este nos respondera con un objeto JSON.
 	- Son muy similares a un objeto de javascript.
-	- Todos los lenguajes de programacion tienen funciones para leer json.
+	- Todos los lenguajes de programación tienen funciones para leer json.
 	- Es una de las formas mas comunes de pasar información porque es muy fácil de usar.
 */
 
 /*
-	Tipos de datos que podemos usar en JSON:
+	📌 Tipos de datos que podemos usar en JSON:
 	- cadena de texto
 	- numeros
 	- objetos (en formato JSON)
