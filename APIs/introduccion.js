@@ -1,9 +1,10 @@
 /*
 	📌 Que son las API
 	Application Programming Interface
+*/
 
-	Las API son una forma en la que el navegador web o un servidor externo nos dan acceso a 
-	funciones adicionales para hacer cosas que normalmente serian dificiles.
+/*
+	📌 Las API son una forma en la que el navegador web o un servidor externo nos dan acceso a funciones adicionales para hacer cosas que normalmente serian dificiles.
 */
 
 /*
