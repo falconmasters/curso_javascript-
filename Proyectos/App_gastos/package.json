@@ -12,11 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@rollup/plugin-node-resolve": "^13.3.0",
-		"rollup": "^2.77.2",
-		"uuid": "^8.3.2"
+		"rollup": "^2.77.2"
 	},
-	"dependencies": {
-		"date-fns": "^2.29.1"
-	}
+	"dependencies": {}
 }
