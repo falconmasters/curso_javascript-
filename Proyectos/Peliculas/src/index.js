@@ -12,8 +12,10 @@ const cargar = async () => {
 	// Obtenemos los resultados.
 	const resultados = await fetchPopulares('movie');
 
-	// Los cargamos en el DOM.
-	cargarTitulos(resultados);
+	if (resultados) {
+		// Los cargamos en el DOM.
+		cargarTitulos(resultados);
+	}
 };
 
 cargar();
