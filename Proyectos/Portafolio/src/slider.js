@@ -1,8 +1,5 @@
 const slider = document.getElementById('slider');
 
-// Codepen fuente del slider:
-// https://codepen.io/kellyex/pen/KKwwdYg?editors=0010
-
 // Variable que guarda el estado de si tenemos el click presionado.
 let clickPresionado = false;
 let coordenadaInicial;
