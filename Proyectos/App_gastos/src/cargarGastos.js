@@ -31,7 +31,7 @@ const cargarGastos = () => {
 						<p class="gasto__nombre">${gasto.descripcion}</p>
 							<p class="gasto__cantidad">${precio}</p>
 						</div>
-						<p class="gasto__fecha">${format(parseISO(gastos[0].fecha), "d 'de' MMMM 'de' yyyy", { locale: es })}</p>
+						<p class="gasto__fecha">${format(parseISO(gasto.fecha), "d 'de' MMMM 'de' yyyy", { locale: es })}</p>
 					</div>
 					<div class="gasto__acciones">
 						<button class="gasto__btn" data-accion="editar-gasto">

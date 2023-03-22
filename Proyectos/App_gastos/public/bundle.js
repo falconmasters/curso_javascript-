@@ -3101,7 +3101,7 @@ var locale = {
 };
 var es = locale;
 
-const contenedorGastos = document.querySelector('#gastos .gastos__lista');
+const contenedorGastos$1 = document.querySelector('#gastos .gastos__lista');
 
 const cargarGastos = () => {
 	const gastos = JSON.parse(window.localStorage.getItem('gastos'));
@@ -3116,21 +3116,21 @@ const cargarGastos = () => {
 		// Eliminamos el mensaje de que no hay gastos.
 		document.querySelector('.gastos .gastos__mensaje').classList.remove('gastos__mensaje--active');
 
-		contenedorGastos.innerHTML = '';
+		contenedorGastos$1.innerHTML = '';
 
 		const formatoMoneda = new Intl.NumberFormat('en-MX', { style: 'currency', currency: 'MXN' });
 		gastosDelMes.forEach((gasto) => {
 			// Formateamos la moneda
 			const precio = formatoMoneda.format(gasto.precio);
 
-			contenedorGastos.innerHTML += `
+			contenedorGastos$1.innerHTML += `
 			<div class="gasto" data-id="${gasto.id}">
 				<div class="gasto__info">
 					<div>
 						<p class="gasto__nombre">${gasto.descripcion}</p>
 							<p class="gasto__cantidad">${precio}</p>
 						</div>
-						<p class="gasto__fecha">${format(parseISO(gastos[0].fecha), "d 'de' MMMM 'de' yyyy", { locale: es })}</p>
+						<p class="gasto__fecha">${format(parseISO(gasto.fecha), "d 'de' MMMM 'de' yyyy", { locale: es })}</p>
 					</div>
 					<div class="gasto__acciones">
 						<button class="gasto__btn" data-accion="editar-gasto">
@@ -3174,7 +3174,7 @@ const cargarGastos = () => {
 		});
 	} else {
 		// Nos aseguramos de que no haya gastos en el DOM
-		contenedorGastos.innerHTML = '';
+		contenedorGastos$1.innerHTML = '';
 
 		// Si no hay gastos activamos el mensaje que indica que no hay gastos.
 		document.querySelector('.gastos .gastos__mensaje').classList.add('gastos__mensaje--active');
@@ -3249,16 +3249,14 @@ boton.addEventListener('click', (e) => {
 	}
 });
 
-const gastos = document.getElementById('gastos');
-gastos.addEventListener('click', (e) => {
-	e.preventDefault();
+const contenedorGastos = document.getElementById('gastos');
+contenedorGastos.addEventListener('click', (e) => {
+	const gasto = e.target.closest('.gasto');
 
-	const target = e.target;
-
-	if (target.closest('.gasto__info')) {
-		const gasto = target.closest('.gasto__info').parentElement;
+	// Comprobamos si estamos haciendo click en un gasto
+	if (gasto) {
 		if (gasto.scrollLeft > 0) {
-			target.closest('.gasto__info').scrollIntoView({
+			gasto.querySelector('.gasto__info').scrollIntoView({
 				behavior: 'smooth',
 				inline: 'start',
 				block: 'nearest',
@@ -3273,14 +3271,15 @@ gastos.addEventListener('click', (e) => {
 	}
 
 	// Editar gasto
-	if (target.closest('[data-accion="editar-gasto"]')) {
+	if (e.target.closest('[data-accion="editar-gasto"]')) {
 		// Obtenemos el id del gasto que queremos editar.
-		const id = target.closest('.gasto').dataset.id;
+		const id = gasto.dataset.id;
 
 		// Obtenemos los gastos guardados
 		const gastosGuardados = JSON.parse(window.localStorage.getItem('gastos'));
 		let indexGastoAEditar;
 
+		// Comprobamos si hay gastos guardados
 		if (gastosGuardados) {
 			// Obtenemos el index del gasto guardado que queremos editar.
 			gastosGuardados.forEach((gasto, index) => {
@@ -3298,16 +3297,14 @@ gastos.addEventListener('click', (e) => {
 			document.querySelector('#formulario-gasto').dataset.id = id;
 		}
 
-		cargarGastos();
-		cargarTotalGastado();
 		// Abrimos el formulario gasto en modo editar.
 		abrirFormularioGasto('editarGasto');
 	}
 
 	// Eliminar gasto
-	if (target.closest('[data-accion="eliminar-gasto"]')) {
+	if (e.target.closest('[data-accion="eliminar-gasto"]')) {
 		// Obtenemos el id del gasto que queremos eliminar.
-		const id = target.closest('.gasto').dataset.id;
+		const id = e.target.closest('.gasto').dataset.id;
 
 		// Obtenemos los gastos guardados
 		const gastosGuardados = JSON.parse(window.localStorage.getItem('gastos'));

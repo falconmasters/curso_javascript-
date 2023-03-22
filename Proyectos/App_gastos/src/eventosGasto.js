@@ -2,16 +2,14 @@ import cargarGastos from './cargarGastos';
 import cargarTotalGastado from './cargarTotalGastado';
 import { abrirFormularioGasto } from './eventoBtnFormularioGasto';
 
-const gastos = document.getElementById('gastos');
-gastos.addEventListener('click', (e) => {
-	e.preventDefault();
+const contenedorGastos = document.getElementById('gastos');
+contenedorGastos.addEventListener('click', (e) => {
+	const gasto = e.target.closest('.gasto');
 
-	const target = e.target;
-
-	if (target.closest('.gasto__info')) {
-		const gasto = target.closest('.gasto__info').parentElement;
+	// Comprobamos si estamos haciendo click en un gasto
+	if (gasto) {
 		if (gasto.scrollLeft > 0) {
-			target.closest('.gasto__info').scrollIntoView({
+			gasto.querySelector('.gasto__info').scrollIntoView({
 				behavior: 'smooth',
 				inline: 'start',
 				block: 'nearest',
@@ -26,14 +24,15 @@ gastos.addEventListener('click', (e) => {
 	}
 
 	// Editar gasto
-	if (target.closest('[data-accion="editar-gasto"]')) {
+	if (e.target.closest('[data-accion="editar-gasto"]')) {
 		// Obtenemos el id del gasto que queremos editar.
-		const id = target.closest('.gasto').dataset.id;
+		const id = gasto.dataset.id;
 
 		// Obtenemos los gastos guardados
 		const gastosGuardados = JSON.parse(window.localStorage.getItem('gastos'));
 		let indexGastoAEditar;
 
+		// Comprobamos si hay gastos guardados
 		if (gastosGuardados) {
 			// Obtenemos el index del gasto guardado que queremos editar.
 			gastosGuardados.forEach((gasto, index) => {
@@ -51,16 +50,14 @@ gastos.addEventListener('click', (e) => {
 			document.querySelector('#formulario-gasto').dataset.id = id;
 		}
 
-		cargarGastos();
-		cargarTotalGastado();
 		// Abrimos el formulario gasto en modo editar.
 		abrirFormularioGasto('editarGasto');
 	}
 
 	// Eliminar gasto
-	if (target.closest('[data-accion="eliminar-gasto"]')) {
+	if (e.target.closest('[data-accion="eliminar-gasto"]')) {
 		// Obtenemos el id del gasto que queremos eliminar.
-		const id = target.closest('.gasto').dataset.id;
+		const id = e.target.closest('.gasto').dataset.id;
 
 		// Obtenemos los gastos guardados
 		const gastosGuardados = JSON.parse(window.localStorage.getItem('gastos'));
